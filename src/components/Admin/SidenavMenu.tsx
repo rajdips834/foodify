@@ -11,6 +11,7 @@ import AddFood from "./AddFood";
 import Dashboard from "./Dashboard";
 import Users from "./Users";
 import Menu from "./Menu";
+import Orders from "./Orders/Index";
 import { useStateValue } from "../../context/StateProvider";
 
 const SidenavMenu = ({
@@ -50,9 +51,7 @@ const SidenavMenu = ({
       title="Orders"
       setActivePage={setActivePage}
       setPageContent={setPageContent}
-      pageContent={
-        <div className="flex justify-center w-full tems-center">Orders</div>
-      }
+      pageContent={<Orders />}
     />
     <NavItem
       activePage={activePage}

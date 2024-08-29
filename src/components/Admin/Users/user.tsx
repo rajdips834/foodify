@@ -5,11 +5,11 @@ import { FcGoogle } from "react-icons/fc";
 import { motion } from "framer-motion";
 const User = ({ item }: { item: any }) => {
   return (
-    <div className="max-w-sm h-auto rounded-lg border border-purple-50 bg-purple-600">
-      <div className="flex flex-col gap-1 items-center pb-10">
+    <div className="h-auto max-w-sm bg-purple-600 border rounded-lg border-purple-50">
+      <div className="flex flex-col items-center gap-1 pb-10">
         <motion.img
           whileHover={{ scale: 1.1 }}
-          className="mb-3 w-24 h-24 rounded-full shadow-lg cursor-pointer object-contain"
+          className="object-contain w-24 h-24 mb-3 rounded-full shadow-lg cursor-pointer"
           src={item?.photoURL || Avatar}
           alt="avatar"
         />
@@ -22,23 +22,17 @@ const User = ({ item }: { item: any }) => {
         </div>
         <motion.div
           whileTap={{ scale: 1.1 }}
-          className="gap-2 text-purple-600 text-sm p-1 px-3 bg-primary shadow-lg rounded-lg flex items-center justify-center mt-2 -mb-2"
+          className="flex items-center justify-center gap-2 p-1 px-3 mt-2 -mb-2 text-sm text-purple-600 rounded-lg shadow-lg bg-primary"
         >
           {item?.providerId !== "google.com" ? <MdEmail /> : <FcGoogle />}{" "}
           <span>{item.providerId}</span>
         </motion.div>
         <div className="flex mt-4 space-x-3 lg:mt-6">
           <p
-            className="inline-flex items-center py-2 px-4 text-xl font-medium text-center text-white shadow-lg rounded-lg bg-purple-600 hover:bg-purple-700 cursor-pointer"
+            className="inline-flex items-center px-4 py-2 text-xl font-medium text-center text-white bg-purple-600 rounded-lg shadow-lg cursor-pointer hover:bg-purple-700"
             title="Delete"
           >
             <MdDeleteForever />
-          </p>
-          <p
-            className="inline-flex items-center py-2 px-4 text-xl font-medium text-center text-gray-900 shadow-lg bg-primary hover:bg-white rounded-lg cursor-pointer  "
-            title="Disable"
-          >
-            <GiShieldDisabled />
           </p>
         </div>
       </div>

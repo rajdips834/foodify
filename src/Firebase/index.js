@@ -243,7 +243,7 @@ export const firebaseAddOrder = async (data) => {
   });
 };
 export const firebaseFetchAllOrders = async () => {
-  const orders = await getDocs(query(collection(firestore, "Orders")));
-
-  return shuffleItems(orders.docs.map((doc) => doc.data()));
+  let orders = await getDocs(query(collection(firestore, "Orders")));
+  orders = orders.docs.map((doc) => doc.data());
+  return orders;
 };
