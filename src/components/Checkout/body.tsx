@@ -11,21 +11,26 @@ import { ImSpinner3 } from "react-icons/im";
 import { toast } from "react-toastify";
 
 const Body = ({ action }: { action: any }) => {
-  const [{ checkoutData, cartTotal, paymentMethod, cartItems, foodItems }, dispatch] =
-    useStateValue();
+  const [
+    { checkoutData, cartTotal, paymentMethod, cartItems, foodItems },
+    dispatch,
+  ] = useStateValue();
   const [loading, setLoading] = useState(false);
 
   const completePayment = () => {
-    if(!checkoutData) return toast.error("Complete payment info")
+    if (!checkoutData) return toast.error("Complete payment info");
     setLoading(true);
     setTimeout(async () => {
       setLoading(false);
       await emptyCart(cartItems, foodItems, dispatch);
       action(false);
-      toast.success("Order completed successfuly with payment. Thank you for your patronage.", {
-        position: "top-center",
-        autoClose: 6000
-      });
+      toast.success(
+        "Order completed successfuly with payment. Thank you for your patronage.",
+        {
+          position: "top-center",
+          autoClose: 6000,
+        }
+      );
     }, 3000);
   };
   return (
@@ -47,7 +52,7 @@ const Body = ({ action }: { action: any }) => {
           <motion.button
             onClick={completePayment}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center justify-center gap-2 w-[90%] p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 hover:from-orange-600 hover:to-orange-400 transition-all duration-75 ease-in-out text-gray-50 text-lg my-2 hover:shadow-lg"
+            className="flex items-center justify-center gap-2 w-[90%] p-2 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 hover:from-purple-600 hover:to-purple-400 transition-all duration-75 ease-in-out text-gray-50 text-lg my-2 hover:shadow-lg"
           >
             {!loading && <BiLock className="" />}
             {!loading ? (

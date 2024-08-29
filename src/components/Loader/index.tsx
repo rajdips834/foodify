@@ -1,18 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const Loader = ({progress, className}:{progress:string, className?:string}) => {
+const Loader = ({
+  progress,
+  className,
+}: {
+  progress: string;
+  className?: string;
+}) => {
   return (
     <>
       <motion.button
-        whileHover={{scale:1.1}}
+        whileHover={{ scale: 1.1 }}
         disabled
         type="button"
-        className={`py-2.5 px-5 mr-2 text-sm font-medium ${className? className: "text-orange-500"} bg-transparent rounded-lg  inline-flex items-center gap-2 cursor-pointer`}
+        className={`py-2.5 px-5 mr-2 text-sm font-medium ${
+          className ? className : "text-purple-500"
+        } bg-transparent rounded-lg  inline-flex items-center gap-2 cursor-pointer`}
       >
         <svg
           role="status"
-          className={`inline w-4 h-4 mr-2 text-gray-200 animate-spin dark:${className? className: "text-orange-500"}`}
+          className={`inline w-4 h-4 mr-2 text-gray-200 animate-spin dark:${
+            className ? className : "text-purple-500"
+          }`}
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +47,7 @@ export const Loader2 = () => {
     <>
       <svg
         role="status"
-        className="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-400 fill-orange-600"
+        className="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-400 fill-purple-600"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -97,8 +97,6 @@ const AddFood = () => {
     return value;
   };
 
-
-
   return (
     <div className="w-full h-fullflex items-center justify-center">
       <div className="border w-full  flex border-gray-300 items-center rounded-lg p-4 flex-col justify-center gap-4  ">
@@ -213,7 +211,7 @@ const AddFood = () => {
         <div className="w-full flex items-center justify-center">
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="ml-0 flex justify-center items-center gap-2 flex-row-reverse md:ml-auto w-full md:w-auto border-none outline-none rounded bg-orange-500 px-12 py-2 text-lg text-white"
+            className="ml-0 flex justify-center items-center gap-2 flex-row-reverse md:ml-auto w-full md:w-auto border-none outline-none rounded bg-purple-500 px-12 py-2 text-lg text-white"
             onClick={() => saveItem()}
           >
             <MdOutlineDataSaverOn /> Save

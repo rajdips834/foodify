@@ -1,13 +1,13 @@
 import { useStateValue } from "../../context/StateProvider";
 import { CreditCard, MOMO } from "../Assets";
 const Selector = () => {
-  const [{paymentMethod}, dispatch] = useStateValue();
-  const setPaymentMethod = (method:string) => {
+  const [{ paymentMethod }, dispatch] = useStateValue();
+  const setPaymentMethod = (method: string) => {
     dispatch({
       type: "SET_PAYMENT_METHOD",
       paymentMethod: method,
     });
-  }
+  };
   return (
     <div className="my-3 flex w-full rounded-t-[2rem] justify-between p-3">
       <div
@@ -22,7 +22,7 @@ const Selector = () => {
         >
           <input
             type="radio"
-            className="form-radio h-5 w-5 text-orange-500 cursor-pointer"
+            className="form-radio h-5 w-5 text-purple-500 cursor-pointer"
             name="type"
             id="type1"
             checked={paymentMethod === "mobile_money"}
@@ -42,7 +42,7 @@ const Selector = () => {
         >
           <input
             type="radio"
-            className="form-radio h-5 w-5 text-orange-500 cursor-pointer"
+            className="form-radio h-5 w-5 text-purple-500 cursor-pointer"
             name="type"
             id="type2"
             checked={paymentMethod === "bank"}

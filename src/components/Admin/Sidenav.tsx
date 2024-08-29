@@ -15,7 +15,7 @@ const Sidenav = ({
   setPageContent: any;
 }) => {
   return (
-    <div className="flex md:flex-col w-full md:w-[20%] bg-orange-600 text-orange-50 px-3 py-4 justify-center items-center h-full">
+    <div className="flex md:flex-col w-full md:w-[20%] bg-purple-600 text-purple-50 px-3 py-4 justify-center items-center h-full">
       <SidenavHeader />
       <SidenavMenu
         activePage={activePage}
@@ -43,7 +43,7 @@ const SidenavHeader = () => {
         className="flex items-center justify-center w-full pb-8 ml-1"
       >
         <img src={Logo} alt="Logo" className="w-10 h-10" />
-        <p className="pl-1 text-xl font-bold no-underline text-orange-50 hover:text-orange-100">
+        <p className="pl-1 text-xl font-bold no-underline text-purple-50 hover:text-purple-100">
           Foodify
         </p>
       </Link>
@@ -61,9 +61,9 @@ const SidenavFooter = () => {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 200 }}
       onClick={() => logout(user, dispatch, navigate)}
-      className="flex items-center justify-center gap-3 px-3 mt-auto cursor-pointer text-orange-50 opacity-70 hover:opacity-100"
+      className="flex items-center justify-center gap-3 px-3 mt-auto cursor-pointer text-purple-50 opacity-70 hover:opacity-100"
     >
-      <AiFillLock className="text-xl font-bold text-orange-50" />
+      <AiFillLock className="text-xl font-bold text-purple-50" />
       <div className="">Logout</div>
     </motion.div>
   );

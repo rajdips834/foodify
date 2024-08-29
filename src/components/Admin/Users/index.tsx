@@ -3,24 +3,25 @@ import { FaSearch } from "react-icons/fa";
 import { useStateValue } from "../../../context/StateProvider";
 import User from "./user";
 
-
 const Users = () => {
   const [{ users }, dispatch] = useStateValue();
   const [query, setQuery] = useState("");
   const [filteredUsers, setFilteredUsers] = useState(users);
-  
+
   const filterUsers = () => {
-      if(query.length === 0) {
-        setFilteredUsers(users);
-      }else{
-        const filter = users.filter((item:any) => item.displayName.toLowerCase().includes(query.toLowerCase()));
-        setFilteredUsers(filter);
-      }
-  }
+    if (query.length === 0) {
+      setFilteredUsers(users);
+    } else {
+      const filter = users.filter((item: any) =>
+        item.displayName.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredUsers(filter);
+    }
+  };
   const searchUsers = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setQuery(e.target.value);
-      filterUsers();
-  }
+    setQuery(e.target.value);
+    filterUsers();
+  };
   return (
     <div className="w-full justify-center flex flex-col">
       {/* search bar */}
@@ -33,23 +34,19 @@ const Users = () => {
           onChange={(e) => searchUsers(e)}
         />
         {/* search button */}
-        <button className="flex items-center justify-center gap-3 text-orange-700 font-bold py-2 px-4 rounded-lg">
+        <button className="flex items-center justify-center gap-3 text-purple-700 font-bold py-2 px-4 rounded-lg">
           <FaSearch />
         </button>
       </div>
 
       {/* dasboard statistics and counts */}
       <div className="w-full grid grid-cols-3 gap-1">
-        {
-          filteredUsers.map((user:any) => (
-            <User key={user.uid} item = {user} />
-          ))
-        }
+        {filteredUsers.map((user: any) => (
+          <User key={user.uid} item={user} />
+        ))}
       </div>
     </div>
   );
 };
 
 export default Users;
-
-

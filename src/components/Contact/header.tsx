@@ -20,7 +20,7 @@ const ContactHeader = () => {
         whileHover={{ scale: 0.9 }}
         className="flex items-center justify-center gap-x-2 px-2"
       >
-        <MdOutlineMessage className="text-xl cursor-pointer text-orange-600" />
+        <MdOutlineMessage className="text-xl cursor-pointer text-purple-600" />
         <span>CONTACT US</span>
       </motion.div>
     </div>
