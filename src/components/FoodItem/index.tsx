@@ -4,11 +4,11 @@ import Action from "./action";
 export const SingleFoodItem = ({
   item,
   col,
-  admin
+  admin,
 }: {
   item: FoodItem;
   col?: boolean;
-  admin?:boolean
+  admin?: boolean;
 }) => {
   const { id, title, price, calories, imageURL, description } = item;
 
@@ -29,15 +29,17 @@ export const SingleFoodItem = ({
           alt={description}
           src={imageURL}
         />
-      <Action food={item} admin={admin} />
+        <Action food={item} admin={admin} />
       </div>
       <div className="w-full flex items-end justify-end flex-col">
         <p className="text-textColor font-semi-bold text-lg">{title}</p>
         <p className="mt-1 text-sm text-gray-500">{description} </p>
-      {admin && (<p className="mt-1 text-sm text-gray-500">{calories} calories </p>)}
+        {admin && (
+          <p className="mt-1 text-sm text-gray-500">{calories} calories </p>
+        )}
         <div className="flex items-center justify-between gap-8 ">
           <p className="text-base text-headingColor font-semibold">
-            <span className="text-sm text-red-600">₵</span> {price}
+            <span className="text-sm text-red-600">₹</span> {price}
           </p>
         </div>
       </div>

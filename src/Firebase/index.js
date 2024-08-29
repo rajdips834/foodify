@@ -4,6 +4,7 @@ import {
   deleteDoc,
   doc,
   getDocs,
+  addDoc,
   orderBy,
   query,
   setDoc,
@@ -235,4 +236,14 @@ export const firebaseGetAllUsers = async () => {
 // delete food
 export const firebaseDeleteFood = async (id) => {
   await deleteDoc(doc(firestore, "Food", `${id}`));
+};
+export const firebaseAddOrder = async (data) => {
+  await addDoc(collection(firestore, "Orders"), data).then(() => {
+    console.log("Order added");
+  });
+};
+export const firebaseFetchAllOrders = async () => {
+  const orders = await getDocs(query(collection(firestore, "Orders")));
+
+  return shuffleItems(orders.docs.map((doc) => doc.data()));
 };

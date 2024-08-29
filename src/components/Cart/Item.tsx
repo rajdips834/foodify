@@ -3,7 +3,11 @@ import { BiMinus, BiPlus } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import { motion } from "framer-motion";
 import { cartItem } from "../../../types";
-import { deleteCartItem, getFoodyById, updateCartItemQty } from "../../utils/functions";
+import {
+  deleteCartItem,
+  getFoodyById,
+  updateCartItemQty,
+} from "../../utils/functions";
 import { useStateValue } from "../../context/StateProvider";
 
 const CartItem = ({ item }: { item: cartItem }) => {
@@ -23,7 +27,7 @@ const CartItem = ({ item }: { item: cartItem }) => {
         <div className="flex flex-col gap-0 ">
           <p className="text-base text-gray-50">{foodItem?.title}</p>
           <p className="text-sm block text-gray-300 font-semibold">
-            <span className="text-xs text-red-600">₵</span> {foodItem?.price}
+            <span className="text-xs text-red-600">₹</span> {foodItem?.price}
           </p>
         </div>
       </div>
@@ -32,7 +36,12 @@ const CartItem = ({ item }: { item: cartItem }) => {
         <motion.div
           className=""
           whileTap={{ scale: 0.75 }}
-          onClick={qty > 1 ? () => updateCartItemQty(cartItems, foodItems, item, dispatch, -1) : () => {}}
+          onClick={
+            qty > 1
+              ? () =>
+                  updateCartItemQty(cartItems, foodItems, item, dispatch, -1)
+              : () => {}
+          }
         >
           <BiMinus className="text-gray-50" />
         </motion.div>
@@ -42,7 +51,9 @@ const CartItem = ({ item }: { item: cartItem }) => {
         <motion.div
           className=""
           whileTap={{ scale: 0.75 }}
-          onClick={() => updateCartItemQty(cartItems, foodItems, item, dispatch, 1)}
+          onClick={() =>
+            updateCartItemQty(cartItems, foodItems, item, dispatch, 1)
+          }
         >
           <BiPlus className="text-gray-50" />
         </motion.div>
