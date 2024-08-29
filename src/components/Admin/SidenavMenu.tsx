@@ -30,14 +30,6 @@ const SidenavMenu = ({
   >
     <NavItem
       activePage={activePage}
-      svgIcon={<AiFillDashboard />}
-      title="Dashboard"
-      setActivePage={setActivePage}
-      setPageContent={setPageContent}
-      pageContent={<Dashboard />}
-    />
-    <NavItem
-      activePage={activePage}
       svgIcon={<MdAddModerator />}
       title="Add Food"
       setActivePage={setActivePage}
@@ -69,16 +61,6 @@ const SidenavMenu = ({
       setActivePage={setActivePage}
       setPageContent={setPageContent}
       pageContent={<Users />}
-    />
-    <NavItem
-      activePage={activePage}
-      svgIcon={<FaCogs />}
-      title="Settings"
-      setActivePage={setActivePage}
-      setPageContent={setPageContent}
-      pageContent={
-        <div className="flex justify-center w-full tems-center">Settings</div>
-      }
     />
   </motion.nav>
 );

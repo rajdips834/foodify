@@ -16,6 +16,7 @@ import ChickenI from "../../img/c3.png";
 import FishI from "../../img/fi3.png";
 import chickenPakora from "../../img/c1.png";
 import mojito from "../../img/d4.png";
+import rice2 from "../../img/r3.png";
 
 import riceImg from "../../img/r4.png";
 // Exports
@@ -37,3 +38,4 @@ export const cPakora = chickenPakora;
 export const Mojito = mojito;
 export const Blueberries = blueberriesImg;
 export const Rice = riceImg;
+export const Rice1 = rice2;
