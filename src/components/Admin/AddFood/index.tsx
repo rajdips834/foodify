@@ -98,23 +98,23 @@ const AddFood = () => {
   };
 
   return (
-    <div className="w-full h-fullflex items-center justify-center">
-      <div className="border w-full  flex border-gray-300 items-center rounded-lg p-4 flex-col justify-center gap-4  ">
-        <div className="w-full py-3 border-b border-gray-300 flex -tems-center gap-2">
+    <div className="items-center justify-center w-full h-fullflex">
+      <div className="flex flex-col items-center justify-center w-full gap-4 p-4 border border-gray-300 rounded-lg ">
+        <div className="flex w-full gap-2 py-3 border-b border-gray-300 -tems-center">
           <MdOutlineFastfood className="text-xl text-gray-600" />
           <input
             type="text"
             required
             placeholder="Enter food name"
             autoFocus
-            className="h-full w-full  bg-transparent pl-2 text-textColor outline-none border-none placeholder:text-gray-400"
+            className="w-full h-full pl-2 bg-transparent border-none outline-none text-textColor placeholder:text-gray-400"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
 
-        <div className="w-full flex flex-col md:flex-row items-center gap-3">
-          <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+        <div className="flex flex-col items-center w-full gap-3 md:flex-row">
+          <div className="flex items-center w-full gap-2 py-2 border-b border-gray-300">
             <BiCategory className="text-xl text-gray-600" />
             <CategoriesSelector
               categories={Categories}
@@ -122,14 +122,14 @@ const AddFood = () => {
               selected={category}
             />
           </div>
-          <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-            <MdOutlineProductionQuantityLimits className="text-gray-600 text-2xl" />
+          <div className="flex items-center w-full gap-2 py-2 border-b border-gray-300">
+            <MdOutlineProductionQuantityLimits className="text-2xl text-gray-600" />
             <input
               type="text"
               required
               placeholder="Quantity"
               autoFocus
-              className="h-full w-full  bg-transparent pl-2 text-textColor outline-none border-none placeholder:text-gray-400"
+              className="w-full h-full pl-2 bg-transparent border-none outline-none text-textColor placeholder:text-gray-400"
               value={quantity}
               onChange={(e) => setQuantity(validateNumber(e.target.value))}
             />
@@ -146,13 +146,13 @@ const AddFood = () => {
                     <img
                       src={image}
                       alt="uploaded food"
-                      className="w-full h-full object-cover"
+                      className="object-cover w-full h-full"
                     />
                     <motion.button
                       whileTap={{ scale: 1.1 }}
                       whileHover={{ scale: 1.2 }}
                       title="Remove Photo"
-                      className="absolute bottom-3 right-3 rounded-full p-2 md:p-5 bg-red-500 text-xl cursor-pointer outline-none hover:shadow-md duration-500 transition-all ease-in-out"
+                      className="absolute p-2 text-xl transition-all duration-500 ease-in-out bg-purple-500 rounded-full outline-none cursor-pointer bottom-3 right-3 md:p-5 hover:shadow-md"
                       onClick={() => deleteImage()}
                     >
                       <MdDeleteOutline className="text-white" />
@@ -169,49 +169,49 @@ const AddFood = () => {
             </>
           )}
         </div>
-        <div className="w-full flex flex-col md:flex-row items-center gap-3">
-          <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-            <MdOutlineFoodBank className="text-gray-600 text-2xl" />
+        <div className="flex flex-col items-center w-full gap-3 md:flex-row">
+          <div className="flex items-center w-full gap-2 py-2 border-b border-gray-300">
+            <MdOutlineFoodBank className="text-2xl text-gray-600" />
             <input
               type="text"
               required
               placeholder="Calories"
               autoFocus
-              className="h-full w-full  bg-transparent pl-2 text-textColor outline-none border-none placeholder:text-gray-400"
+              className="w-full h-full pl-2 bg-transparent border-none outline-none text-textColor placeholder:text-gray-400"
               value={calories}
               onChange={(e) => setCalories(e.target.value)}
             />
           </div>
-          <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-            <GiTakeMyMoney className="text-gray-600 text-2xl" />
+          <div className="flex items-center w-full gap-2 py-2 border-b border-gray-300">
+            <GiTakeMyMoney className="text-2xl text-gray-600" />
             <input
               type="text"
               required
               placeholder="Price"
               autoFocus
-              className="h-full w-full  bg-transparent pl-2 text-textColor outline-none border-none placeholder:text-gray-400"
+              className="w-full h-full pl-2 bg-transparent border-none outline-none text-textColor placeholder:text-gray-400"
               value={price}
               onChange={(e) => setPrice(validateNumber(e.target.value))}
             />
           </div>
         </div>
-        <div className="w-full py-3 border-b border-gray-300 flex -tems-center gap-2">
+        <div className="flex w-full gap-2 py-3 border-b border-gray-300 -tems-center">
           <BiFoodMenu className="text-xl text-gray-600" />
           <input
             type="text"
             required
             placeholder="Short Description"
             autoFocus
-            className="h-full w-full  bg-transparent pl-2 text-textColor outline-none border-none placeholder:text-gray-400"
+            className="w-full h-full pl-2 bg-transparent border-none outline-none text-textColor placeholder:text-gray-400"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
 
-        <div className="w-full flex items-center justify-center">
+        <div className="flex items-center justify-center w-full">
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="ml-0 flex justify-center items-center gap-2 flex-row-reverse md:ml-auto w-full md:w-auto border-none outline-none rounded bg-purple-500 px-12 py-2 text-lg text-white"
+            className="flex flex-row-reverse items-center justify-center w-full gap-2 px-12 py-2 ml-0 text-lg text-white bg-purple-500 border-none rounded outline-none md:ml-auto md:w-auto"
             onClick={() => saveItem()}
           >
             <MdOutlineDataSaverOn /> Save

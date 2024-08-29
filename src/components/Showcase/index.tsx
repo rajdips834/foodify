@@ -1,6 +1,5 @@
 import React from "react";
-import Left from "./left";
-import Right from "./right";
+
 import { HeroBg } from "../Assets";
 import StaticsImages from "./Statics";
 import { data } from "../../utils/showcaseStatic";

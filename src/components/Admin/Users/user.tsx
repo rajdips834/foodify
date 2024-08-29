@@ -29,7 +29,7 @@ const User = ({ item }: { item: any }) => {
         </motion.div>
         <div className="flex mt-4 space-x-3 lg:mt-6">
           <p
-            className="inline-flex items-center py-2 px-4 text-xl font-medium text-center text-white shadow-lg rounded-lg bg-red-600 hover:bg-red-700 cursor-pointer"
+            className="inline-flex items-center py-2 px-4 text-xl font-medium text-center text-white shadow-lg rounded-lg bg-purple-600 hover:bg-purple-700 cursor-pointer"
             title="Delete"
           >
             <MdDeleteForever />

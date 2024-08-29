@@ -14,7 +14,7 @@ const Action = ({ food, admin }: { food: FoodItem; admin?: boolean }) => {
           <motion.div
             whileTap={{ scale: 1.1 }}
             whileHover={{ scale: 1.2 }}
-            className="flex items-center justify-center w-8 h-8 bg-red-600 rounded-full cursor-pointer md:w-10 md:h-10"
+            className="flex items-center justify-center w-8 h-8 bg-purple-600 rounded-full cursor-pointer md:w-10 md:h-10"
             onClick={() => deleteFood(food, foodItems, dispatch)}
             title="Delete"
           >
@@ -25,7 +25,7 @@ const Action = ({ food, admin }: { food: FoodItem; admin?: boolean }) => {
         <motion.div
           whileTap={{ scale: 1.1 }}
           whileHover={{ scale: 1.2 }}
-          className="flex items-center justify-center w-8 h-8 bg-red-600 rounded-full cursor-pointer md:w-10 md:h-10"
+          className="flex items-center justify-center w-8 h-8 bg-purple-600 rounded-full cursor-pointer md:w-10 md:h-10"
           onClick={() =>
             addToCart(cartItems, foodItems, user, food.id, dispatch)
           }
