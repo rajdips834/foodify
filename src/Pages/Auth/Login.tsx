@@ -22,14 +22,15 @@ const Login = () => {
             success: "Signin successful: WELCOME!",
             error: "Error signing account, Please try again🤗",
           })
-          .then((userData) => {
+          .then(() => {
             // Signed in
-            const user = userData[0];
+            const user = email;
+            console.log("User signed in: ", email);
             dispatch({
               type: "SET_USER",
-              user: user,
+              user: email,
             });
-            localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("user", JSON.stringify(email));
             navigate("/");
           })
           .catch((error) => {
@@ -45,21 +46,21 @@ const Login = () => {
 
   return (
     <section className="w-full h-auto ">
-      <div className="container md:py-10 h-full">
-        <div className="flex justify-center items-center flex-wrap h-full g-3 text-gray-800">
+      <div className="container h-full md:py-10">
+        <div className="flex flex-wrap items-center justify-center h-full text-gray-800 g-3">
           <ImageBox />
           <div className="w-full md:w-[30rem]">
             <form className="p-2">
               <ProviderAuth />
               <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
-                <p className="text-center text-textColor text-sm font-semibold mx-4 mb-0">
+                <p className="mx-4 mb-0 text-sm font-semibold text-center text-textColor">
                   OR
                 </p>
               </div>
               <div className="mb-6">
                 <input
                   type="text"
-                  className="form-control block w-full px-4 py-2  text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none"
+                  className="block w-full px-4 py-2 m-0 text-gray-700 transition ease-in-out bg-white border border-gray-300 border-solid rounded form-control bg-clip-padding focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none"
                   placeholder="Email address"
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -68,23 +69,23 @@ const Login = () => {
               <div className="mb-6">
                 <input
                   type="password"
-                  className="form-control block w-full px-4 py-2  text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none"
+                  className="block w-full px-4 py-2 m-0 text-gray-700 transition ease-in-out bg-white border border-gray-300 border-solid rounded form-control bg-clip-padding focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none"
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex items-center justify-between mb-6">
                 <Link
                   to="/"
-                  className="text-purple-600 hover:text-purple-700 focus:text-purple-700 active:text-purple-800 duration-200 transition ease-in-out"
+                  className="text-purple-600 transition duration-200 ease-in-out hover:text-purple-700 focus:text-purple-700 active:text-purple-800"
                 >
                   Forgot password?
                 </Link>
               </div>
 
               <motion.p
-                className="cursor-pointer flex items-center justify-center px-7 py-3 bg-gradient-to-br from-purple-400 to-purple-500 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-purple-600 hover:shadow-lg focus:bg-purple-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+                className="flex items-center justify-center w-full py-3 text-sm font-medium leading-snug text-white uppercase transition duration-150 ease-in-out rounded shadow-md cursor-pointer px-7 bg-gradient-to-br from-purple-400 to-purple-500 hover:bg-purple-600 hover:shadow-lg focus:bg-purple-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg"
                 onClick={EmailAuth}
                 whileHover={{ scale: 1.1 }}
               >
@@ -92,14 +93,14 @@ const Login = () => {
               </motion.p>
 
               <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
-                <p className="text-center text-sm text-textColor font-semibold mx-4 mb-0">
+                <p className="mx-4 mb-0 text-sm font-semibold text-center text-textColor">
                   Don't have an account?
                 </p>
               </div>
               <Link to={"/register"}>
                 <motion.p
                   whileHover={{ scale: 0.99 }}
-                  className="cursor-pointer flex items-center justify-center px-7 py-3 bg-gradient-to-br from-purple-400 to-purple-500 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-purple-600 hover:shadow-lg focus:bg-purple-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+                  className="flex items-center justify-center w-full py-3 text-sm font-medium leading-snug text-white uppercase transition duration-150 ease-in-out rounded shadow-md cursor-pointer px-7 bg-gradient-to-br from-purple-400 to-purple-500 hover:bg-purple-600 hover:shadow-lg focus:bg-purple-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg"
                 >
                   Sign Up
                 </motion.p>

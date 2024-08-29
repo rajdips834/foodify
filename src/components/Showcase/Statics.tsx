@@ -4,7 +4,7 @@ import { foodItemsStatic } from "../../../types";
 
 const StaticsImages: React.FC<foodItemsStatic> = ({ items }) => {
   return (
-    <div className="w-full h-full absolute flex items-center justify-center top-6 left-0 lg:px-30 lg:py-4 gap-4 flex-wrap ">
+    <div className="absolute left-0 flex flex-wrap items-center justify-center w-full h-full gap-4 top-6 lg:px-30 lg:py-4 ">
       {items.map((item, index) => (
         <div
           key={index}
@@ -15,14 +15,13 @@ const StaticsImages: React.FC<foodItemsStatic> = ({ items }) => {
             whileTap={{ scale: 1.1 }}
             src={item.imgSrc}
             alt="icecream"
-            className="w-24 lg:w-40 -mt-10 lg:-mt-20"
+            className="w-24 -mt-10 lg:w-40 lg:-mt-20"
           />
-          <p className="text-base lg:text-lg font-semibold text-textColor">{item.title}</p>
+          <p className="text-base font-semibold lg:text-lg text-textColor">
+            {item.title}
+          </p>
           <p className="text-[10px] lg:text-lg text-lightGray font-semibold my-2 lg:my-3">
             {item.desc}
-          </p>
-          <p className="text-sm font-semibold text-headingColor">
-            <span className="text-xs text-red-600">₵</span> {item.price}
           </p>
         </div>
       ))}
