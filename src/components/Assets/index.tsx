@@ -7,7 +7,6 @@ import HeroBgI from "../../img/hero-bg.jpg";
 import EmptyCartI from "../../img/emptyCart.svg";
 import NotFoundI from "../../img/NotFound.svg";
 import Visa from "../../img/visa.png";
-import Momo from "../../img/momo.png";
 import blueberriesImg from "../../img/f3.png";
 // Showcase Banner Static Assets
 import IcreamI from "../../img/i1.png";
@@ -33,7 +32,6 @@ export const Fish = FishI;
 export const EmptyCartImg = EmptyCartI;
 export const NotFoundImg = NotFoundI;
 export const CreditCard = Visa;
-export const MOMO = Momo;
 export const cPakora = chickenPakora;
 export const Mojito = mojito;
 export const Blueberries = blueberriesImg;

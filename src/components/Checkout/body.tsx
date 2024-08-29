@@ -1,8 +1,6 @@
 import { BiLock } from "react-icons/bi";
 import CardForm from "./forms/Card";
 import CheckoutFooter from "./footer";
-import MomoForm from "./forms/Momo";
-import Selector from "./Selector";
 import { motion } from "framer-motion";
 import { useStateValue } from "../../context/StateProvider";
 import { emptyCart } from "../../utils/functions";
@@ -60,15 +58,11 @@ const Body = ({ action }: { action: any }) => {
   return (
     <div className="w-full h-full rounded-t-[2rem]  bg-cartBg flex flex-col">
       {/* Payment Selectors */}
-      <Selector />
       {/* payment form  */}
       <div className="min-h-[50vh] mt-5">
-        {paymentMethod === "mobile_money" ? <MomoForm /> : <CardForm />}
+        <CardForm />
         <div className="flex items-center justify-center w-full my-2">
-          <p className="text-gray-300">
-            Amount Due:{" "}
-            <span className="font-bold text-white">{`₹{cartTotal}`}</span>{" "}
-          </p>
+          <p className="text-gray-300">Amount Due: ₹{cartTotal}</p>
         </div>
         {/* pay now button */}
 

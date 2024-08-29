@@ -32,7 +32,7 @@ const CartTotal = ({ checkoutState }: { checkoutState: any }) => {
         whileTap={{ scale: 0.8 }}
         className="w-full p-2 my-2 text-lg rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 text-gray-50 hover:shadow-lg"
       >
-        Checkout ₹{cartTotal}
+        Checkout ₹ {cartTotal}
       </motion.button>
     </div>
   );
