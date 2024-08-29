@@ -28,8 +28,8 @@ const MobileNav = ({
     });
   };
   return (
-    <div className="flex flex-col bg-cardOverlay backdrop-blur-sm items-start justify-start gap-16 w-screen h-screen  overflow-y-hidden  z-50 overflow-hidden ">
-      <motion.div className="flex items-center justify-between w-screen h-24  px-10">
+    <div className="z-50 flex flex-col items-start justify-start w-screen h-screen gap-16 overflow-hidden overflow-y-hidden bg-cardOverlay backdrop-blur-sm ">
+      <motion.div className="flex items-center justify-between w-screen h-24 px-10">
         <motion.div
           whileTap={{ scale: 0.9 }}
           whileHover={{ scale: 1.1 }}
@@ -41,8 +41,8 @@ const MobileNav = ({
         >
           <MdShoppingBasket className="text-4xl cursor-pointer" />
           {cartItems && (
-            <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-cartNumBg flex items-center justify-center">
-              <p className="text-sm text-white font-semibold">
+            <div className="absolute flex items-center justify-center w-6 h-6 rounded-full -top-2 -right-2 bg-cartNumBg">
+              <p className="text-sm font-semibold text-white">
                 {cartItems.length}
               </p>
             </div>
@@ -56,7 +56,7 @@ const MobileNav = ({
           className="relative flex items-center justify-center text-textColor"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <MdOutlineRestaurantMenu className="text-headingColor text-4xl" />
+          <MdOutlineRestaurantMenu className="text-4xl text-headingColor" />
         </motion.div>
       </motion.div>
       <div
@@ -65,44 +65,24 @@ const MobileNav = ({
         <Link
           onClick={() => setIsOpen(!isOpen)}
           to={"/menu"}
-          className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out px-10"
+          className="px-10 text-base transition-all duration-100 ease-in-out cursor-pointer text-textColor hover:text-headingColor"
         >
           Menu
         </Link>
-        <Link
-          onClick={() => setIsOpen(!isOpen)}
-          to={"services"}
-          className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out px-10"
-        >
-          Services
-        </Link>
-        <Link
-          onClick={() => setIsOpen(!isOpen)}
-          to={"/about"}
-          className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out px-10"
-        >
-          About
-        </Link>
-        <p
-          onClick={handleToggleContact}
-          className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out px-10"
-        >
-          Contact
-        </p>
       </div>
 
       <Link
         to={"/"}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center  justify-center w-full"
+        className="flex items-center justify-center w-full"
       >
         <motion.div
           whileTap={{ scale: 0.9 }}
           whileHover={{ scale: 1.1 }}
           className="flex items-center gap-2 cursor-pointer"
         >
-          <img src={Logo} alt="Logo" className="w-16 object-cover" />
-          <p className="text-headingColor text-3xl font-bold">Foodify</p>
+          <img src={Logo} alt="Logo" className="object-cover w-16" />
+          <p className="text-3xl font-bold text-headingColor">Foodify</p>
         </motion.div>
       </Link>
     </div>

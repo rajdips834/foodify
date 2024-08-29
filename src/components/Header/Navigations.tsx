@@ -17,7 +17,7 @@ const Navigations = ({ direction }: { direction?: string }) => {
       type: "TOGGLE_CONTACT_FORM",
       showContactForm: !showContactForm,
     });
-  }
+  };
   return (
     <div className="flex items-center gap-8">
       <motion.ul
@@ -28,34 +28,15 @@ const Navigations = ({ direction }: { direction?: string }) => {
       >
         <motion.li
           whileHover={{ scale: 1.1 }}
-          className="md:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
+          className="text-base transition-all duration-100 ease-in-out cursor-pointer md:text-sm lg:text-md text-textColor hover:text-headingColor"
         >
-          <Link to={'/'}>Home</Link>
+          <Link to={"/"}>Home</Link>
         </motion.li>
         <motion.li
           whileHover={{ scale: 1.1 }}
-          className="md:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
+          className="text-base transition-all duration-100 ease-in-out cursor-pointer md:text-sm lg:text-md text-textColor hover:text-headingColor"
         >
-          <Link to={'/menu'}>Menu</Link>
-        </motion.li>
-        <motion.li
-          whileHover={{ scale: 1.1 }}
-          className="md:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
-        >
-          <Link to={'/services'}>Services</Link>
-        </motion.li>
-        <motion.li
-          whileHover={{ scale: 1.1 }}
-          className="md:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
-        >
-          <Link to={'/about'}>About us</Link>
-        </motion.li>
-        <motion.li
-          whileHover={{ scale: 1.1 }}
-          className="md:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
-          onClick={handleToggleContact}
-        >
-          Contact us
+          <Link to={"/menu"}>Menu</Link>
         </motion.li>
       </motion.ul>
 
@@ -67,8 +48,8 @@ const Navigations = ({ direction }: { direction?: string }) => {
       >
         <MdShoppingBasket className="text-2xl cursor-pointer" />
         {cartItems && (
-          <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center cursor-pointer">
-            <p className="text-sm text-white font-semibold">
+          <div className="absolute flex items-center justify-center w-5 h-5 rounded-full cursor-pointer -top-2 -right-2 bg-cartNumBg">
+            <p className="text-sm font-semibold text-white">
               {cartItems.length}
             </p>
           </div>

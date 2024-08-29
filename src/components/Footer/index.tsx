@@ -14,17 +14,17 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-primary sm:p-6 w-full">
-      <div className="flex justify-center md:justify-start items-center">
+    <footer className="w-full p-4 bg-primary sm:p-6">
+      <div className="flex items-center justify-center md:justify-start">
         <motion.div
           whileHover={{ rotate: [0, -10, 10, -10, 0] }}
           className="mb-3 md:mb-0"
         >
-          <Link to="/" className="flex gap-8 items-center">
+          <Link to="/" className="flex items-center gap-8">
             <motion.img
               whileHover={{ rotate: [0, -10, 10, -10, 0] }}
               src={Logo}
-              className="w-10 md:w-36 object-contain"
+              className="object-contain w-10 md:w-36"
               alt="Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-headingColor">
@@ -35,7 +35,7 @@ const Footer = () => {
       </div>
       <hr className="my-2 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="flex flex-col items-center justify-center md:flex-row md:justify-between">
-        <span className="text-sm text-gray-500 text-center dark:text-gray-400">
+        <span className="text-sm text-center text-gray-500 dark:text-gray-400">
           © {new Date().getFullYear()} Foodify™. All Rights Reserved.
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0 md:text-xl">
@@ -43,8 +43,8 @@ const Footer = () => {
             whileTap={{ scale: 1.1 }}
             target={"_blank"}
             rel="noreferrer"
-            href="https://qbentil.me"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
+            href="https://rajdipsinha.vercel.app/"
+            className="flex items-center justify-center w-10 h-10 rounded-full text-textColor bg-primary"
           >
             <BsDribbble />
           </motion.a>
@@ -52,8 +52,8 @@ const Footer = () => {
             whileTap={{ scale: 1.1 }}
             target={"_blank"}
             rel="noreferrer"
-            href="https://github.com/qbentil"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
+            href="https://github.com/rajdips834"
+            className="flex items-center justify-center w-10 h-10 rounded-full text-textColor bg-primary"
           >
             <BsGithub />
           </motion.a>
@@ -61,8 +61,8 @@ const Footer = () => {
             whileTap={{ scale: 1.1 }}
             target={"_blank"}
             rel="noreferrer"
-            href="https://linkedin.com/in/bentil"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
+            href="https://linkedin.com/in/rajdipsinha"
+            className="flex items-center justify-center w-10 h-10 rounded-full text-textColor bg-primary"
           >
             <BsLinkedin />
           </motion.a>
@@ -70,8 +70,8 @@ const Footer = () => {
             whileTap={{ scale: 1.1 }}
             target={"_blank"}
             rel="noreferrer"
-            href="https://twitter.com/themanbentil"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
+            href="https://x.com/rajdips834"
+            className="flex items-center justify-center w-10 h-10 rounded-full text-textColor bg-primary"
           >
             <BsTwitter />
           </motion.a>
@@ -79,19 +79,10 @@ const Footer = () => {
             whileTap={{ scale: 1.1 }}
             target={"_blank"}
             rel="noreferrer"
-            href="https://instagram.com/qbentil"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
+            href="https://www.instagram.com/rukjaaraj"
+            className="flex items-center justify-center w-10 h-10 rounded-full text-textColor bg-primary"
           >
             <BsInstagram />
-          </motion.a>
-          <motion.a
-            whileTap={{ scale: 1.1 }}
-            target={"_blank"}
-            rel="noreferrer"
-            href="https://facebook.com/qbentil"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
-          >
-            <BsFacebook />
           </motion.a>
         </div>
       </div>

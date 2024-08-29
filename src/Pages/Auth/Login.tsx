@@ -22,15 +22,20 @@ const Login = () => {
             success: "Signin successful: WELCOME!",
             error: "Error signing account, Please try again🤗",
           })
-          .then(() => {
-            // Signed in
-            const user = email;
-            console.log("User signed in: ", email);
+          .then((userData) => {
+            const user = {
+              providerId: "password",
+              uid: email,
+              displayName: null,
+              email: email,
+              phoneNumber: null,
+            };
+
             dispatch({
               type: "SET_USER",
-              user: email,
+              user: user,
             });
-            localStorage.setItem("user", JSON.stringify(email));
+            localStorage.setItem("user", JSON.stringify(user));
             navigate("/");
           })
           .catch((error) => {

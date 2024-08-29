@@ -1,15 +1,6 @@
 import "react-toastify/dist/ReactToastify.css";
 
-import {
-  About,
-  Admin,
-  Home,
-  Login,
-  Menu,
-  Profile,
-  Services,
-  Signup,
-} from "./Pages";
+import { Admin, Home, Login, Menu, Profile, Signup } from "./Pages";
 import { Cart, Footer, Header } from "./components";
 import { Route, Routes } from "react-router-dom";
 import {
@@ -64,9 +55,7 @@ function App() {
             <Route path="/register" element={<Signup />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/about" element={<About />} />
             <Route path="/menu" element={<Menu />} />
-            <Route path="/services" element={<Services />} />
           </Routes>
 
           {!(adminMode && isAdmin(user)) && <Footer />}
