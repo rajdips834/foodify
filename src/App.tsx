@@ -41,6 +41,7 @@ function App() {
         {showCart && <Cart />}
         {showContactForm && <Contact />}
         <Header />
+        <p className="p-7" />
         <main
           className={`${
             !(adminMode && isAdmin(user)) &&
