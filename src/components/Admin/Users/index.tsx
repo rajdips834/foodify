@@ -23,24 +23,24 @@ const Users = () => {
     filterUsers();
   };
   return (
-    <div className="w-full justify-center flex flex-col">
+    <div className="flex flex-col justify-center w-full">
       {/* search bar */}
-      <div className="w-full flex justify-center p-2 bg-white mb-4 rounded-lg">
+      <div className="flex justify-center w-full p-2 mb-4 bg-white rounded-lg">
         <input
-          className="w-full p-2 outline-none rounded-lg "
+          className="w-full p-2 rounded-lg outline-none "
           type="text"
           placeholder="Search user"
           value={query}
           onChange={(e) => searchUsers(e)}
         />
         {/* search button */}
-        <button className="flex items-center justify-center gap-3 text-purple-700 font-bold py-2 px-4 rounded-lg">
+        <button className="flex items-center justify-center gap-3 px-4 py-2 font-bold text-purple-700 rounded-lg">
           <FaSearch />
         </button>
       </div>
 
       {/* dasboard statistics and counts */}
-      <div className="w-full grid grid-cols-3 gap-1">
+      <div className="grid w-full grid-cols-3 gap-1">
         {filteredUsers.map((user: any) => (
           <User key={user.uid} item={user} />
         ))}

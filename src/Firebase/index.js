@@ -212,6 +212,11 @@ export const firebaseAddUser = async (data) => {
     });
   }
 };
+export const firebaseDeleteUser = async (uid) => {
+  await deleteDoc(doc(firestore, "Users", `${uid}`)).then(() => {
+    toast.success("User deleted successfully");
+  });
+};
 
 // get user
 export const firebaseGetUser = async (uid) => {
