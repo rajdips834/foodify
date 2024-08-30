@@ -5,22 +5,22 @@ import { motion } from "framer-motion";
 import { useStateValue } from "../../context/StateProvider";
 
 const ContactHeader = () => {
-  const [{}, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
   return (
-    <div className="w-full flex flex-row-reverse items-center bg-white justify-between px-4 py-2 cursor-pointer">
+    <div className="flex flex-row-reverse items-center justify-between w-full px-4 py-2 bg-white cursor-pointer">
       <motion.div
         whileTap={{ scale: 0.8 }}
         onClick={() => hideContactform(dispatch)}
       >
-        <MdOutlineKeyboardBackspace className="text-textColor text-2xl " />
+        <MdOutlineKeyboardBackspace className="text-2xl text-textColor " />
       </motion.div>
 
       <motion.div
         whileTap={{ scale: 0.9 }}
         whileHover={{ scale: 0.9 }}
-        className="flex items-center justify-center gap-x-2 px-2"
+        className="flex items-center justify-center px-2 gap-x-2"
       >
-        <MdOutlineMessage className="text-xl cursor-pointer text-purple-600" />
+        <MdOutlineMessage className="text-xl text-purple-600 cursor-pointer" />
         <span>CONTACT US</span>
       </motion.div>
     </div>

@@ -18,7 +18,8 @@ const Header = () => {
   const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
 
   return (
-    <header className="fixed z-50 w-screen bg-cardOverlay backdrop-blur-md md:p-3 md:px-4 lg:p-6 lg:px-16">
+    <header className="fixed z-50 w-screen bg-purple-700 border border-gray-200 shadow-lg bg-opacity-30 backdrop-blur-lg backdrop-saturate-150 border-opacity-30 md:p-3 md:px-4 lg:p-6 lg:px-16">
+      {" "}
       {/* Tablet and Desktop */}
       <div className="justify-between hidden w-full md:flex item-center">
         <Link to={"/"}>
@@ -59,7 +60,6 @@ const Header = () => {
           <LoginAction text={"Login"} />
         )}
       </div>
-
       {/* Mobile */}
       <motion.div
         className="flex items-center justify-between w-full p-0 md:hidden"
