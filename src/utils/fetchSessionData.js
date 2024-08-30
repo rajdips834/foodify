@@ -3,7 +3,7 @@ import { firebaseGetAllUsers } from "../Firebase";
 export const fetchSessionUser = () => {
   const user = localStorage.getItem("user");
 
-  if (user && user !== "undefined") {
+  if (user && user != "undefined") {
     return JSON.parse(user);
   } else {
     localStorage.removeItem("user"); // Clear only the specific item
@@ -14,7 +14,7 @@ export const fetchSessionUser = () => {
 export const fetchSessionCart = () => {
   const cartInfo = localStorage.getItem("cartItems");
 
-  if (cartInfo && cartInfo !== "undefined") {
+  if (cartInfo && cartInfo != "undefined") {
     return JSON.parse(cartInfo);
   } else {
     localStorage.removeItem("cartItems"); // Clear only the specific item
@@ -26,7 +26,7 @@ export const fetchSessionCart = () => {
 export const fetchSessionUserMode = () => {
   const adminMode = localStorage.getItem("adminMode");
 
-  if (adminMode && adminMode !== "undefined") {
+  if (adminMode && adminMode != "undefined") {
     return JSON.parse(adminMode);
   } else {
     localStorage.removeItem("adminMode"); // Clear only the specific item
