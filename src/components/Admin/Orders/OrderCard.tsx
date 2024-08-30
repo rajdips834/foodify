@@ -21,6 +21,7 @@ interface OrderCardProps {
 const OrderCard: React.FC<OrderCardProps> = ({ cartItems, time, user }) => {
   let id = 0;
   const [details, setDetails] = React.useState<any>();
+  let total = 0;
   useEffect(() => {
     firebaseFetchFoodDetails().then((data) => {
       setDetails(data);
@@ -44,6 +45,7 @@ const OrderCard: React.FC<OrderCardProps> = ({ cartItems, time, user }) => {
               const food = details.find((food: any) => food.id === item.fid);
               console.log(food);
 
+              total += parseInt(food?.price, 10);
               return (
                 <li key={item.id} className="flex justify-between">
                   <span>{food?.title}</span>
@@ -54,6 +56,7 @@ const OrderCard: React.FC<OrderCardProps> = ({ cartItems, time, user }) => {
             })}
           </ul>
         )}
+        Cart Total={total}
       </div>
     </div>
   );

@@ -35,9 +35,7 @@ const Footer = () => {
             </Link>
           </motion.div>
         </div>
-        <span className="text-sm text-center text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} Foodify™. All Rights Reserved.
-        </span>
+
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0 md:text-xl">
           <motion.a
             whileTap={{ scale: 1.1 }}

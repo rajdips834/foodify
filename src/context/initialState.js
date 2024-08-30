@@ -5,6 +5,7 @@ import {
 
 const sessionUser = fetchSessionUser();
 const sessionUserMode = fetchSessionUserMode();
+console.log(sessionUserMode);
 export const initialState = {
   user: sessionUser,
   foodItems: null,

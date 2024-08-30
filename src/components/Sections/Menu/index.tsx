@@ -6,18 +6,17 @@ import Filters from "../../Filters";
 import { Title } from "..";
 import { useStateValue } from "../../../context/StateProvider";
 
-const Menu = ({title}:{title?:string}) => {
-
+const Menu = ({ title }: { title?: string }) => {
   const [scrollValue, setScrollValue] = useState(0);
   const [{ foodItems }, dispatch] = useStateValue();
   const [filter, setFilter] = useState<string>("all");
-    
+
   return (
     <section className="w-full my-5" id="menu">
-      <div className="w-full flex items-center justify-center">
+      <div className="flex items-center justify-center w-full">
         <Title title={title || "Our Hot Dishes"} center />
       </div>
-      <Filters filter={filter} setFilter = {setFilter} />
+      <Filters filter={filter} setFilter={setFilter} />
       <Container
         className="bg-containerbg"
         col
