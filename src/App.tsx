@@ -39,7 +39,7 @@ function App() {
       <ToastContainer />
       <div className="w-screen h-auto min-h-[100vh] flex flex-col bg-primary">
         {showCart && <Cart />}
-        {/* {showContactForm && <Contact />} */}
+        {showContactForm && <Contact />}
         <Header />
         <main
           className={`${
@@ -58,7 +58,7 @@ function App() {
             <Route path="/menu" element={<Menu />} />
           </Routes>
 
-          <Footer />
+          {!(adminMode && isAdmin(user)) && <Footer />}
         </main>
       </div>
     </AnimatePresence>
