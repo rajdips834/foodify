@@ -4,6 +4,7 @@ import {
   deleteDoc,
   doc,
   getDocs,
+  getDoc,
   addDoc,
   orderBy,
   query,
@@ -247,3 +248,27 @@ export const firebaseFetchAllOrders = async () => {
   orders = orders.docs.map((doc) => doc.data());
   return orders;
 };
+export const firebaseFetchFoodDetails = async () => {
+  const foods = await getDocs(query(collection(firestore, "Food")));
+  let food = foods.docs.map((doc) => doc.data());
+
+  return food;
+};
+// try {
+//   // Fetch the document from the "Food" collection with the given id
+//   const docRef = doc(firestore, "Food", id);
+//   const docSnap = await getDoc(docRef);
+//   console.log(docSnap);
+//   // Check if the document exists
+//   if (docSnap.exists()) {
+//     // Extract the 'name' field from the document data
+//     const foodName = docSnap.data().name;
+//     return foodName;
+//   } else {
+//     console.log("No such document!");
+//     return null;
+//   }
+// } catch (error) {
+//   console.error("Error fetching food details:", error);
+//   throw error;
+// }

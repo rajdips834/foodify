@@ -7,7 +7,7 @@ export default function Orders() {
     firebaseFetchAllOrders().then((data) => {
       setOrders(data);
     });
-  });
+  }, []);
   return (
     <div>
       {orders?.map((data: any, item: number) => {

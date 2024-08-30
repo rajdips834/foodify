@@ -1,6 +1,9 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { firebaseFetchFoodDetails } from "../../../Firebase";
+import { useState } from "react";
+import { get } from "http";
 interface CartItem {
+  fid: number;
   id: number;
   name: string;
   price: number;
@@ -16,6 +19,14 @@ interface OrderCardProps {
 }
 
 const OrderCard: React.FC<OrderCardProps> = ({ cartItems, time, user }) => {
+  let id = 0;
+  const [details, setDetails] = React.useState<any>();
+  useEffect(() => {
+    firebaseFetchFoodDetails().then((data) => {
+      setDetails(data);
+    });
+  }, []);
+
   return (
     <div className="max-w-sm p-4 overflow-hidden bg-white rounded shadow-lg">
       <div className="mb-2 text-xl font-bold">Order Summary</div>
@@ -27,13 +38,22 @@ const OrderCard: React.FC<OrderCardProps> = ({ cartItems, time, user }) => {
       </p>
       <div className="mt-4">
         <strong>Items:</strong>
-        <ul className="mt-2 list-disc list-inside">
-          {cartItems.map((item) => (
-            <li key={item.id} className="text-gray-700">
-              {item.name} - ${item.price} x {item.quantity}
-            </li>
-          ))}
-        </ul>
+        {details && (
+          <ul>
+            {cartItems.map((item) => {
+              const food = details.find((food: any) => food.id === item.fid);
+              console.log(food);
+
+              return (
+                <li key={item.id} className="flex justify-between">
+                  <span>{food?.title}</span>
+                  {/* <span>{food?.qty}</span> */}
+                  <span>{food?.price}</span>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
     </div>
   );
