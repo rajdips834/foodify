@@ -26,7 +26,7 @@ const Caraousel = () => {
       </div>
       <div className="">
         <Carousel
-          centerSlidePercentage={isSmallScreen ? 70 : 30}
+          centerSlidePercentage={isSmallScreen ? 80 : 30}
           centerMode={true}
           autoPlay // Enables automatic sliding
           infiniteLoop // Allows the slider to loop infinitely
